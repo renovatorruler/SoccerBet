@@ -1,6 +1,6 @@
 development:
-  rpc_host: localhost
-  rpc_port: 8101
+  rpc_host: designeer.us
+  rpc_port: 8545
   rpc_whitelist: "*"
   minerthreads: 1
   genesis_block: config/genesis/dev_genesis.json
@@ -9,7 +9,7 @@ development:
   mine_when_needed: true
   gas_limit: 500000
   gas_price: 10000000000000
-  console: false
+  console: true
   account:
     init: true
     password: config/password

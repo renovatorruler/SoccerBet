@@ -1,4 +1,4 @@
-contract SoccerEscrow {
+contract SoccerBet {
     enum Team { A, B }
     
     struct BettingParty {
@@ -13,7 +13,7 @@ contract SoccerEscrow {
     address oracle;
     uint spareAmount;
     
-    function SoccerEscrow(address bettingPartyA, address bettingPartyB) {
+    function SoccerBet(address bettingPartyA, address bettingPartyB) {
         oracle = msg.sender;
         A.account = bettingPartyA;
         B.account = bettingPartyB;

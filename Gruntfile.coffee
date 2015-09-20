@@ -23,6 +23,11 @@ module.exports = (grunt) ->
           "app/html/**/*.html"
         ]
 
+      font:
+        src: [
+          "app/font/**"
+        ]
+
       coffee:
         dest: "generated/dapp/compiled-coffee"
         compiled: [
@@ -60,6 +65,10 @@ module.exports = (grunt) ->
         files: ["<%= files.html.src %>"]
         tasks: ["copy"]
 
+      font:
+        files: ["<%= files.font.src %>"]
+        tasks: ["copy"]
+
       js:
         files: ["<%= files.js.src %>"]
         tasks: ["concat"]
@@ -91,6 +100,21 @@ module.exports = (grunt) ->
       contracts:
         files:
           "dist/contracts/": '<%= files.contracts.src %>'
+      font:
+        files: [
+            {
+                expand: true
+                cwd: "app/"
+                src: "font/**"
+                dest: "dist/dapp/"
+            },
+            {
+                expand: true
+                cwd: "app/"
+                src: "font/**"
+                dest: "generated/dapp/"
+            }
+        ]
 
     uglify:
       dist:

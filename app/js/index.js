@@ -1,19 +1,20 @@
 $(document).ready(function() {
+    $('.button-collapse').sideNav();
 
-  $("button.set").click(function() {
-    var value = parseInt($("input.text").val(), 10);
-    SimpleStorage.set(value);
-    addToLog("SimpleStorage.set("+value+")");
-  });
+    $("button.set").click(function() {
+        var value = parseInt($("input.text").val(), 10);
+        SimpleStorage.set(value);
+        addToLog("SimpleStorage.set("+value+")");
+    });
 
-  document.getElementsByClassName("get")[0].addEventListener('click', function() {
-    var value = SimpleStorage.get().toNumber();
-    $(".value").html(value);
-    addToLog("SimpleStorage.get()");
-  });
+    document.getElementsByClassName("get")[0].addEventListener('click', function() {
+        var value = SimpleStorage.get().toNumber();
+        $(".value").html(value);
+        addToLog("SimpleStorage.get()");
+    });
 
-  var addToLog = function(txt) {
-    $(".logs").append("<br>" + txt);
-  }
+    var addToLog = function(txt) {
+        $(".logs").append("<br>" + txt);
+    }
 
 });
